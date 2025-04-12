@@ -1,8 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: '/visitor_pass/', // Add this line for GitHub Pages
   plugins: [react()],
-  base:"/visitor_pass"
-})
+});
