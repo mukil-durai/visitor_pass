@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './pages/Navbar';
 import VisitorEntryForm from './pages/VisitorEntryForm';
 import GatekeeperPage from './pages/GatekeeperPage';
@@ -16,6 +16,7 @@ function App() {
         <Navbar /> {/* Add Navbar component */}
         <Routes>
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/visitor_pass" element={<Navigate to="/signin" replace />} />
           <Route
             path="/"
             element={
