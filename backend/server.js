@@ -19,6 +19,21 @@ app.use(cors({
   credentials: true, // Allow cookies if needed
 }));
 
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    'https://mukil-durai.github.io/visitor_pass', // Without trailing slash
+    'https://mukil-durai.github.io/visitor_pass/' // With trailing slash
+  ];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 mongoose.connect(process.env.MONGO_URI);
 
 const visitorSchema = new mongoose.Schema({
