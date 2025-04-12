@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 
 dotenv.config();
 
@@ -23,6 +24,11 @@ const visitorSchema = new mongoose.Schema({
 });
 
 const Visitor = mongoose.model('Visitor', visitorSchema);
+
+// Serve favicon
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname, 'favicon.ico'));
+});
 
 app.post('/api/visitors', async (req, res) => {
   try {
