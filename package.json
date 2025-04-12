@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "vite",
     "start": "node backend/server.js",
-
     "predeploy": "npm run build",
     "deploy": "npm install gh-pages && gh-pages -d dist",
     "build": "vite build",
