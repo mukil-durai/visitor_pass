@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Configure CORS to allow requests from your frontend
 app.use(cors({
-  origin: 'https://mukil-durai.github.io', // Replace with your frontend's URL
+  origin: 'https://mukil-durai.github.io', // Frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   credentials: true, // Allow cookies if needed
 }));
@@ -29,7 +29,7 @@ const visitorSchema = new mongoose.Schema({
   numberOfPersons: Number, // New field for number of persons
 });
 
-const Visitor = mongoose.model('Visitor', visitorSchema);
+const Visitor = mongoose.model('Visitor', visitorSchema); // Maps to the 'visitors' collection
 
 // Default route for the root URL
 app.get('/', (req, res) => {
