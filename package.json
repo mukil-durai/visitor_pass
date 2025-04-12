@@ -1,10 +1,10 @@
 {
   "name": "visitor",
-  "homepage": "https://mukil-durai.github.io/visitor_pass",
+  "homepage": "https://mukil-durai.github.io/visitor_pass/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
+  "scripts": {  
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "npm install gh-pages && gh-pages -d dist",
