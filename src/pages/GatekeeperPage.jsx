@@ -23,7 +23,7 @@ function GatekeeperPage() {
     try {
       setLoading(true);
       const queryParams = new URLSearchParams(searchFields).toString();
-      const response = await fetch(`http://localhost:5000/api/visitors?${queryParams}`);
+      const response = await fetch(`https://your-backend-url.onrender.com/api/visitors?${queryParams}`);
       if (!response.ok) {
         throw new Error('Failed to fetch visitors');
       }
@@ -46,7 +46,7 @@ function GatekeeperPage() {
   const handleUpdateExitTime = async (id) => {
     try {
       const exitTime = new Date();
-      const response = await fetch(`http://localhost:5000/api/visitors/${id}`, {
+      const response = await fetch(`https://your-backend-url.onrender.com/api/visitors/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ exitTime }),

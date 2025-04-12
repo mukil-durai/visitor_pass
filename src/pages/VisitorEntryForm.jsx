@@ -55,7 +55,7 @@ function VisitorEntryForm() {
 
     const visitorData = { ...formData, entryTime };
     try {
-      const response = await fetch('http://localhost:5000/api/visitors', {
+      const response = await fetch('https://your-backend-url.onrender.com/api/visitors', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(visitorData),
