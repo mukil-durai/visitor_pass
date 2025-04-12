@@ -1,15 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://mukil:mukil12@visitorpass.6jcilsx.mongodb.net/visitorDB?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGO_URI);
 
 const visitorSchema = new mongoose.Schema({
   name: String,

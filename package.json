@@ -4,8 +4,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {  
+  "scripts": {
     "dev": "vite",
+    "start": "node backend/server.js",
+
     "predeploy": "npm run build",
     "deploy": "npm install gh-pages && gh-pages -d dist",
     "build": "vite build",
@@ -15,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^5.3.5",
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.13.2",
     "react": "^19.0.0",
