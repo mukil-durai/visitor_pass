@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Configure CORS to allow requests from your frontend
 app.use(cors({
-  origin: 'https://mukil-durai.github.io/visitor_pass/', // Ensure this matches your frontend URL
+  origin: 'https://mukil-durai.github.io/visitor_pass', // Remove trailing slash
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   credentials: true, // Allow cookies if needed
 }));

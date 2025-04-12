@@ -13,7 +13,7 @@ function VisitorLogs() {
     const fetchLogs = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://your-backend-url.onrender.com/api/visitors');
+        const response = await fetch('https://visitor-pass-1.onrender.com/api/visitors');
         if (!response.ok) {
           throw new Error('Failed to fetch visitor logs');
         }
