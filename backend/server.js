@@ -8,6 +8,8 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+// Configure CORS to allow requests from your frontend
 app.use(cors({
   origin: 'https://mukil-durai.github.io', // Replace with your frontend's URL
 }));
