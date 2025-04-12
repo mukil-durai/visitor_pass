@@ -25,9 +25,9 @@ const visitorSchema = new mongoose.Schema({
 
 const Visitor = mongoose.model('Visitor', visitorSchema);
 
-// Serve favicon
-app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname, 'favicon.ico'));
+// Default route for the root URL
+app.get('/', (req, res) => {
+  res.send('Backend is running successfully!');
 });
 
 app.post('/api/visitors', async (req, res) => {
