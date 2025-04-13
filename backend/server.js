@@ -11,28 +11,10 @@ app.use(express.json());
 
 // Configure CORS to allow requests from your frontend
 app.use(cors({
-  origin: [
-    'https://mukil-durai.github.io/visitor_pass', // Without trailing slash
-    'https://mukil-durai.github.io/visitor_pass/' // With trailing slash
-  ],
+  origin: 'https://mukil-durai.github.io', // Allow only your frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   credentials: true, // Allow cookies if needed
 }));
-
-app.use((req, res, next) => {
-  const allowedOrigins = [
-    'https://mukil-durai.github.io/visitor_pass', // Without trailing slash
-    'https://mukil-durai.github.io/visitor_pass/' // With trailing slash
-  ];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
 
 mongoose.connect(process.env.MONGO_URI);
 
