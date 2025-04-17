@@ -124,10 +124,10 @@ function VisitorLogs() {
   };
 
   const filteredLogs = logs.filter(log => 
-    log.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    log.visiting.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    log.purpose.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    log.phone.includes(searchTerm)
+    (log.name && log.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (log.visiting && log.visiting.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (log.purpose && log.purpose.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (log.phone && log.phone.includes(searchTerm))
   );
 
   return (
